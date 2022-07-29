@@ -52,7 +52,7 @@ func NewCMA(token string) *Client {
 			"X-Contentful-User-Agent": fmt.Sprintf("sdk contentful-go/%s", Version),
 		},
 		BaseURL:     "https://api.contentful.com",
-		Environment: "master",
+		Environment: "dev",
 	}
 	c.commonService.c = c
 
@@ -79,7 +79,7 @@ func NewCDA(token string) *Client {
 			"X-Contentful-User-Agent": fmt.Sprintf("sdk contentful-go/%s", Version),
 		},
 		BaseURL:     "https://cdn.contentful.com",
-		Environment: "master",
+		Environment: "dev",
 	}
 	c.commonService.c = c
 
