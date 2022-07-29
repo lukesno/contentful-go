@@ -48,6 +48,9 @@ const (
 	FieldTypeObject = "Object"
 )
 
+type ValidationFields struct {
+}
+
 // Field model
 type Field struct {
 	ID          string              `json:"id,omitempty"`
@@ -307,7 +310,7 @@ func (service *ContentTypesService) List(spaceID string) *Collection {
 
 // Get fetched a content type specified by `contentTypeID`
 func (service *ContentTypesService) Get(spaceID, contentTypeID string) (*ContentType, error) {
-	path := fmt.Sprintf("/spaces/%s/environments/dev/content_types/%s", spaceID, contentTypeID)
+	path := fmt.Sprintf("/spaces/%s/content_types/%s", spaceID, contentTypeID)
 	method := "GET"
 
 	req, err := service.c.newRequest(method, path, nil, nil)
@@ -320,7 +323,7 @@ func (service *ContentTypesService) Get(spaceID, contentTypeID string) (*Content
 		return nil, err
 	}
 
-	return nil, nil
+	return &ct, nil
 }
 
 // Upsert updates or creates a new content type
