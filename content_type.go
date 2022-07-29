@@ -293,7 +293,7 @@ func (ct *ContentType) GetVersion() int {
 
 // List return a content type collection
 func (service *ContentTypesService) List(spaceID string) *Collection {
-	path := fmt.Sprintf("/spaces/%s/content_types", spaceID)
+	path := fmt.Sprintf("/spaces/%s/environments/dev/content_types", spaceID)
 	method := "GET"
 
 	req, err := service.c.newRequest(method, path, nil, nil)
