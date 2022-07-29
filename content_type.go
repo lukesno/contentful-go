@@ -337,10 +337,10 @@ func (service *ContentTypesService) Upsert(spaceID string, ct *ContentType) erro
 	var method string
 
 	if ct.Sys != nil && ct.Sys.ID != "" {
-		path = fmt.Sprintf("/spaces/%s/content_types/%s", spaceID, ct.Sys.ID)
+		path = fmt.Sprintf("/spaces/%s/environments/dev/content_types/%s", spaceID, ct.Sys.ID)
 		method = "PUT"
 	} else {
-		path = fmt.Sprintf("/spaces/%s/content_types", spaceID)
+		path = fmt.Sprintf("/spaces/%s/environments/dev/content_types", spaceID)
 		method = "POST"
 	}
 
