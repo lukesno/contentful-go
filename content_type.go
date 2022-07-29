@@ -320,7 +320,7 @@ func (service *ContentTypesService) Get(spaceID, contentTypeID string) (*Content
 		return nil, err
 	}
 
-	return &ct, nil
+	return nil, nil
 }
 
 // Upsert updates or creates a new content type
